@@ -1,6 +1,7 @@
 aid: perenual
 name: Perenual
-description: 'Plant API Documentation '
+description: >-
+  Plant API Documentation.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -15,7 +16,8 @@ specificationVersion: '0.19'
 apis:
   - aid: perenual:perenual
     name: Perenual
-    description: 'Plant API Documentation '
+    description: >-
+      Plant API Documentation.
     humanURL: ' https://perenual.com/docs/api'
     tags:
       - API

@@ -1,0 +1,347 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Perenual API
+  description: Perenual provides a comprehensive plant database API offering access to over 10,000+ plant species, including
+    details on care, watering, sunlight, edibility, toxicity, pests, diseases, and care guides.
+  tags:
+  - Perenual
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: perenual
+    baseUri: https://perenual.com/api/v2
+    description: Perenual API HTTP API.
+    authentication:
+      type: apikey
+      in: query
+      name: key
+      value: '{{PERENUAL_TOKEN}}'
+    resources:
+    - name: species-list
+      path: /species-list
+      operations:
+      - name: getspecieslist
+        method: GET
+        description: List plant species
+        inputParameters:
+        - name: page
+          in: query
+          type: integer
+        - name: q
+          in: query
+          type: string
+        - name: order
+          in: query
+          type: string
+        - name: edible
+          in: query
+          type: boolean
+        - name: poisonous
+          in: query
+          type: boolean
+        - name: cycle
+          in: query
+          type: string
+        - name: watering
+          in: query
+          type: string
+        - name: sunlight
+          in: query
+          type: string
+        - name: indoor
+          in: query
+          type: boolean
+        - name: hardiness
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: species-details-id
+      path: /species/details/{id}
+      operations:
+      - name: getspeciesdetails
+        method: GET
+        description: Get plant species details
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: pest-disease-list
+      path: /pest-disease-list
+      operations:
+      - name: getpestdiseaselist
+        method: GET
+        description: List pests and diseases
+        inputParameters:
+        - name: id
+          in: query
+          type: integer
+        - name: page
+          in: query
+          type: integer
+        - name: q
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: species-care-guide-list
+      path: /species-care-guide-list
+      operations:
+      - name: getcareguides
+        method: GET
+        description: List plant care guides
+        inputParameters:
+        - name: species_id
+          in: query
+          type: integer
+        - name: page
+          in: query
+          type: integer
+        - name: q
+          in: query
+          type: string
+        - name: type
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: hardiness-map
+      path: /hardiness-map
+      operations:
+      - name: gethardinessmap
+        method: GET
+        description: Get hardiness map for species
+        inputParameters:
+        - name: species_id
+          in: query
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: perenual-rest
+    description: REST adapter for Perenual API.
+    resources:
+    - path: /species-list
+      name: getspecieslist
+      operations:
+      - method: GET
+        name: getspecieslist
+        description: List plant species
+        call: perenual.getspecieslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /species/details/{id}
+      name: getspeciesdetails
+      operations:
+      - method: GET
+        name: getspeciesdetails
+        description: Get plant species details
+        call: perenual.getspeciesdetails
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /pest-disease-list
+      name: getpestdiseaselist
+      operations:
+      - method: GET
+        name: getpestdiseaselist
+        description: List pests and diseases
+        call: perenual.getpestdiseaselist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /species-care-guide-list
+      name: getcareguides
+      operations:
+      - method: GET
+        name: getcareguides
+        description: List plant care guides
+        call: perenual.getcareguides
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /hardiness-map
+      name: gethardinessmap
+      operations:
+      - method: GET
+        name: gethardinessmap
+        description: Get hardiness map for species
+        call: perenual.gethardinessmap
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: perenual-mcp
+    transport: http
+    description: MCP adapter for Perenual API for AI agent use.
+    tools:
+    - name: getspecieslist
+      description: List plant species
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: perenual.getspecieslist
+      with:
+        page: tools.page
+        q: tools.q
+        order: tools.order
+        edible: tools.edible
+        poisonous: tools.poisonous
+        cycle: tools.cycle
+        watering: tools.watering
+        sunlight: tools.sunlight
+        indoor: tools.indoor
+        hardiness: tools.hardiness
+      inputParameters:
+      - name: page
+        type: integer
+        description: page
+      - name: q
+        type: string
+        description: q
+      - name: order
+        type: string
+        description: order
+      - name: edible
+        type: boolean
+        description: edible
+      - name: poisonous
+        type: boolean
+        description: poisonous
+      - name: cycle
+        type: string
+        description: cycle
+      - name: watering
+        type: string
+        description: watering
+      - name: sunlight
+        type: string
+        description: sunlight
+      - name: indoor
+        type: boolean
+        description: indoor
+      - name: hardiness
+        type: integer
+        description: hardiness
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getspeciesdetails
+      description: Get plant species details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: perenual.getspeciesdetails
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: integer
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpestdiseaselist
+      description: List pests and diseases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: perenual.getpestdiseaselist
+      with:
+        id: tools.id
+        page: tools.page
+        q: tools.q
+      inputParameters:
+      - name: id
+        type: integer
+        description: id
+      - name: page
+        type: integer
+        description: page
+      - name: q
+        type: string
+        description: q
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcareguides
+      description: List plant care guides
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: perenual.getcareguides
+      with:
+        species_id: tools.species_id
+        page: tools.page
+        q: tools.q
+        type: tools.type
+      inputParameters:
+      - name: species_id
+        type: integer
+        description: species_id
+      - name: page
+        type: integer
+        description: page
+      - name: q
+        type: string
+        description: q
+      - name: type
+        type: string
+        description: type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gethardinessmap
+      description: Get hardiness map for species
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: perenual.gethardinessmap
+      with:
+        species_id: tools.species_id
+      inputParameters:
+      - name: species_id
+        type: integer
+        description: species_id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    PERENUAL_TOKEN: PERENUAL_TOKEN

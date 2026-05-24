@@ -44,6 +44,8 @@ common:
   url: https://perenual.com
 - type: Documentation
   url: https://perenual.com/docs/api
+- type: LLMsTxt
+  url: https://perenual.com/llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

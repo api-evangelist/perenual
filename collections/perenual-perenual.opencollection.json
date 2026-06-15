@@ -1,0 +1,210 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perenual API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Species",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List plant species",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/species-list",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "edible",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "poisonous",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cycle",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "watering",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sunlight",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "indoor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hardiness",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of plant species with filtering options."
+        },
+        {
+          "info": {
+            "name": "Get plant species details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/species/details/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns details for a specific plant species."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Pests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List pests and diseases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/pest-disease-list",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of plant pests and diseases."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Care",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List plant care guides",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/species-care-guide-list",
+            "params": [
+              {
+                "name": "species_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns plant care guides (Supreme tier)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Maps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get hardiness map for species",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/hardiness-map",
+            "params": [
+              {
+                "name": "species_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns hardiness map data for a plant species (Supreme tier)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

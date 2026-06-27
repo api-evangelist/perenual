@@ -38,7 +38,7 @@ common:
     url: https://perenual.com
   - type: Documentation
     url: https://perenual.com/docs/api
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://perenual.com/llms.txt
 maintainers:
   - FN: Kin Lane

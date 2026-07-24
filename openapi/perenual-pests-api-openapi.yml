@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Perenual Care Pests API
+  description: Perenual provides a comprehensive plant database API offering access to over 10,000+ plant species, including details on care, watering, sunlight, edibility, toxicity, pests, diseases, and care guides.
+  version: '2.0'
+  contact:
+    name: Perenual API Support
+    url: https://perenual.com/docs/api
+servers:
+- url: https://perenual.com/api/v2
+  description: Production
+security:
+- apiKeyAuth: []
+tags:
+- name: Pests
+  description: Pest and disease data
+paths:
+  /pest-disease-list:
+    get:
+      operationId: getPestDiseaseList
+      summary: List pests and diseases
+      description: Returns a paginated list of plant pests and diseases.
+      tags:
+      - Pests
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+      - name: q
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: key
+externalDocs:
+  description: Documentation
+  url: https://perenual.com/docs/api

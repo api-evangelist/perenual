@@ -4,9 +4,22 @@ description: >-
   Perenual provides a comprehensive plant database API offering access to over 10,000+ plant species, including details
   on care, watering, sunlight, edibility, toxicity, pests, diseases, and care guides.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/perenual.png
 tags:
   - Plants
   - Botany
@@ -17,22 +30,54 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/perenual/refs/heads/main/apis.yml
 specificationVersion: '0.20'
 apis:
-  - aid: perenual:perenual
-    name: Perenual API
-    description: >-
-      Perenual provides a comprehensive plant database API offering access to over 10,000+ plant species, including
-      details on care, watering, sunlight, edibility, toxicity, pests, diseases, and care guides.
-    humanURL: https://perenual.com/docs/api
-    baseURL: https://perenual.com/api/v2
-    tags:
-      - Plants
-      - Botany
-      - Gardening
-    properties:
-      - type: Documentation
-        url: https://perenual.com/docs/api
-      - type: OpenAPI
-        url: openapi/perenual-perenual-openapi.yml
+- aid: perenual:perenual-care-api
+  name: Perenual Care API
+  description: Plant care guides
+  humanURL: https://perenual.com/docs/api
+  baseURL: https://perenual.com/api/v2
+  tags:
+  - Care
+  properties:
+  - type: OpenAPI
+    url: openapi/perenual-care-api-openapi.yml
+  - type: Documentation
+    url: https://perenual.com/docs/api
+- aid: perenual:perenual-maps-api
+  name: Perenual Maps API
+  description: Hardiness map data
+  humanURL: https://perenual.com/docs/api
+  baseURL: https://perenual.com/api/v2
+  tags:
+  - Maps
+  properties:
+  - type: OpenAPI
+    url: openapi/perenual-maps-api-openapi.yml
+  - type: Documentation
+    url: https://perenual.com/docs/api
+- aid: perenual:perenual-pests-api
+  name: Perenual Pests API
+  description: Pest and disease data
+  humanURL: https://perenual.com/docs/api
+  baseURL: https://perenual.com/api/v2
+  tags:
+  - Pests
+  properties:
+  - type: OpenAPI
+    url: openapi/perenual-pests-api-openapi.yml
+  - type: Documentation
+    url: https://perenual.com/docs/api
+- aid: perenual:perenual-species-api
+  name: Perenual Species API
+  description: Plant species data
+  humanURL: https://perenual.com/docs/api
+  baseURL: https://perenual.com/api/v2
+  tags:
+  - Species
+  properties:
+  - type: OpenAPI
+    url: openapi/perenual-species-api-openapi.yml
+  - type: Documentation
+    url: https://perenual.com/docs/api
 common:
   - type: AgenticAccess
     url: agentic-access/perenual-agentic-access.yml

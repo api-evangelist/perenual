@@ -1,0 +1,20 @@
+{
+  "provider": "perenual",
+  "sources": [
+    "perenual-care-api-openapi.yml",
+    "perenual-maps-api-openapi.yml",
+    "perenual-pests-api-openapi.yml",
+    "perenual-species-api-openapi.yml"
+  ],
+  "outputs": [
+    "perenual-care-api-openapi.yml",
+    "perenual-maps-api-openapi.yml",
+    "perenual-pests-api-openapi.yml",
+    "perenual-species-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

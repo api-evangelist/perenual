@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perenual Care Pests API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List pests and diseases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/pest-disease-list",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of plant pests and diseases."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

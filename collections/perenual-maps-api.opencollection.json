@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perenual Care Maps API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Maps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get hardiness map for species",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/hardiness-map",
+            "params": [
+              {
+                "name": "species_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns hardiness map data for a plant species (Supreme tier)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

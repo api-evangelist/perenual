@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perenual Care Species API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Species",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List plant species",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/species-list",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "edible",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "poisonous",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cycle",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "watering",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sunlight",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "indoor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hardiness",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of plant species with filtering options."
+        },
+        {
+          "info": {
+            "name": "Get plant species details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://perenual.com/api/v2/species/details/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns details for a specific plant species."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

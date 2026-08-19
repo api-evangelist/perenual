@@ -1,0 +1,546 @@
+{
+  "item": [
+    {
+      "id": "51fe2e71-0f8d-4dc5-aa23-339b76d47c3e",
+      "name": "Species",
+      "description": {
+        "content": "Plant species data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d34701d-54bd-47c6-ab46-aef7e01334fe",
+          "name": "List plant species",
+          "request": {
+            "name": "List plant species",
+            "description": {
+              "content": "Returns a paginated list of plant species with filtering options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species-list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "edible",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "poisonous",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cycle",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "watering",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sunlight",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "indoor",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardiness",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f65198ca-5c5e-4cdc-9280-1e19a8745f1a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species-list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "edible",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "poisonous",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cycle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sunlight",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "indoor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hardiness",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "654efb3e-8c3c-49cf-86f6-15a72ef0138b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species-list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "edible",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "poisonous",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cycle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sunlight",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "indoor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hardiness",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4ef52ff7-39cc-471d-b22c-e2ab91ba1a9b",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species-list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "edible",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "poisonous",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cycle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sunlight",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "indoor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hardiness",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96abe263-50c2-42d5-873b-7dbe4c123534",
+          "name": "Get plant species details",
+          "request": {
+            "name": "Get plant species details",
+            "description": {
+              "content": "Returns details for a specific plant species.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species",
+                "details",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a36726c9-5aa3-401b-aa20-fabaddf765f0",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    "details",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "849eae7f-7cf7-48cb-93ae-6b4060611200",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    "details",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "253e64d5-c6d9-4d20-9e11-1706d5e5e8f7",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    "details",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://perenual.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2062aafa-be8e-4c89-b083-d5118a88fe5b",
+    "name": "Perenual Care Species API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perenual provides a comprehensive plant database API offering access to over 10,000+ plant species, including details on care, watering, sunlight, edibility, toxicity, pests, diseases, and care guides.\n\nContact Support:\n Name: Perenual API Support",
+      "type": "text/plain"
+    }
+  }
+}

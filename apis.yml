@@ -28,7 +28,7 @@ tags:
 created: '2025-02-24'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/perenual/refs/heads/main/apis.yml
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: perenual:perenual-care-api
   name: Perenual Care API

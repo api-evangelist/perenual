@@ -38,7 +38,7 @@ tags:
   - Gardening
   - Horticulture
 created: '2025-02-24'
-modified: '2026-05-19'
+modified: '2026-10-06'
 url: https://raw.githubusercontent.com/api-evangelist/perenual/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
@@ -91,6 +91,8 @@ apis:
   - type: Documentation
     url: https://perenual.com/docs/api
 common:
+  - url: https://perenual.com/blog
+    type: Blog
   - type: AgenticAccess
     url: agentic-access/perenual-agentic-access.yml
   - type: VulnerabilityDisclosure
